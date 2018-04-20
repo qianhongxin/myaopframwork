@@ -38,7 +38,7 @@ public class ProxyFactoryBean {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         advice.beforeMethod(method);
-                        Object retVal = method.invoke(target, args);
+                        Object retVal = method.invoke(target, args);//target就是ProxyFactoryBean的成员target，指向当前对象的target
                         advice.afterMethod(method);
                         return retVal;
                     }
